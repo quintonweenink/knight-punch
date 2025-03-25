@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dls2sapes5ene"]
+
+[ext_resource type="Texture2D" uid="uid://mm1fdkeyw00t" path="res://assets/images/arrow.png" id="1_qaoo7"]
+[ext_resource type="Texture2D" uid="uid://dju3qod2jc15r" path="res://assets/images/attack.png" id="2_ep0mg"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(24, 436)
+scale = Vector2(6, 6)
+texture_normal = ExtResource("1_qaoo7")
+action = "move_left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(433, 626)
+rotation = 3.14159
+scale = Vector2(6, 6)
+texture_normal = ExtResource("1_qaoo7")
+action = "move_right"
+visibility_mode = 1
+
+[node name="Jump" type="TouchScreenButton" parent="."]
+position = Vector2(1122, 430)
+rotation = 1.5708
+scale = Vector2(6.161, 6)
+texture_normal = ExtResource("1_qaoo7")
+action = "jump"
+visibility_mode = 1
+
+[node name="Attack" type="TouchScreenButton" parent="."]
+position = Vector2(717, 436)
+scale = Vector2(6.287, 6)
+texture_normal = ExtResource("2_ep0mg")
+action = "attack"
+visibility_mode = 1
