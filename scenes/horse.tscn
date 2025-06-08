@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://x64gn8m01qnx"]
+
+[ext_resource type="Script" uid="uid://cgf71pwaykvga" path="res://scripts/horse.gd" id="1_lpili"]
+[ext_resource type="Texture2D" uid="uid://b7fs2boectiji" path="res://assets/sprites/hourse-sprite-sheet.png" id="2_42vyf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mwg8"]
+atlas = ExtResource("2_42vyf")
+region = Rect2(31, 0, 31, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mwg8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
+size = Vector2(20, 16)
+
+[node name="Horse" type="Area2D" groups=["Enemy"]]
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_lpili")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v5wyi")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_0l8pv")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(27, 0)
+collision_mask = 3
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-27, 0)
+collision_mask = 3
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
