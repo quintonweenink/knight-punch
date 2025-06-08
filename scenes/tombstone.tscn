@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://fkcp3hwgank8"]
+
+[ext_resource type="Script" uid="uid://rn4qtsjlnefo" path="res://scripts/tombstone.gd" id="1_mweh2"]
+[ext_resource type="Texture2D" uid="uid://dggpu6durwtcb" path="res://assets/sprites/world_tileset.png" id="2_cghlf"]
+[ext_resource type="FontFile" uid="uid://m173tgas6hkj" path="res://assets/fonts/PixelOperator8.ttf" id="3_0gfhl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mweh2"]
+atlas = ExtResource("2_cghlf")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ls27i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mweh2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ssuvv"]
+radius = 5.09902
+
+[node name="Tombstone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_mweh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ls27i")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ssuvv")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -22.0
+offset_top = -35.0
+offset_right = 80.0
+offset_bottom = -12.0
+theme_override_fonts/font = ExtResource("3_0gfhl")
+theme_override_font_sizes/font_size = 8
+text = "RIP Lourence"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://uj4q55lalfa1"]
+
+[ext_resource type="Script" uid="uid://bjf8kfj682jwg" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_right = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.00300199
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Container"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BoksenLevelButton" type="Button" parent="Container/VBoxContainer"]
+layout_mode = 2
+text = "Level 1 - Boxen"
+
+[node name="PaardencoachingLevelButton" type="Button" parent="Container/VBoxContainer"]
+layout_mode = 2
+text = "Level 2 - Paardencoaching"
+
+[node name="TimeManagementLevelButton" type="Button" parent="Container/VBoxContainer"]
+layout_mode = 2
+text = "Level 3 - Time management"
+
+[node name="CreditsButton" type="Button" parent="Container/VBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[connection signal="pressed" from="Container/VBoxContainer/BoksenLevelButton" to="." method="_on_button_level1_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/PaardencoachingLevelButton" to="." method="_on_button_level1_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/TimeManagementLevelButton" to="." method="_on_time_management_level_button_pressed"]
+[connection signal="pressed" from="Container/VBoxContainer/CreditsButton" to="." method="_on_button_credits_pressed"]
