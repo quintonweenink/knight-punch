@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://x64gn8m01qnx"]
+[gd_scene load_steps=7 format=3 uid="uid://x64gn8m01qnx"]
 
 [ext_resource type="Script" uid="uid://cgf71pwaykvga" path="res://scripts/horse.gd" id="1_lpili"]
 [ext_resource type="Texture2D" uid="uid://b7fs2boectiji" path="res://assets/sprites/hourse-sprite-sheet.png" id="2_42vyf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5mwg8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpili"]
 atlas = ExtResource("2_42vyf")
 region = Rect2(31, 0, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42vyf"]
+atlas = ExtResource("2_42vyf")
+region = Rect2(62, 0, 31, 31)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5wyi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5mwg8")
+"texture": SubResource("AtlasTexture_lpili")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42vyf")
 }],
 "loop": true,
 "name": &"default",
@@ -29,6 +36,7 @@ script = ExtResource("1_lpili")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_v5wyi")
 autoplay = "default"
+frame_progress = 0.873475
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
