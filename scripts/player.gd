@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		# Add the gravity.
 		velocity += get_gravity() * delta
-		# Dash
+		# Double jump
 		if Input.is_action_just_pressed("jump") and !dash_used:
 			dash_used = true
 			velocity.y = DASH_SPEED
