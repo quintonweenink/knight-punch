@@ -10,12 +10,14 @@ var dash_used = false
 var health = 100
 var lastAttackTime = Time.get_ticks_msec()
 var lastDirection = 0.0
+var dead = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_right: RayCast2D = $RayCastRight
 @onready var ray_cast_left: RayCast2D = $RayCastLeft
 
 func _process(delta: float) -> void:
+		
 	var direction := Input.get_axis("move_left", "move_right")
 	if not direction == 0.0:
 		lastDirection = direction
@@ -43,6 +45,9 @@ func _process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	if dead == true: 
+		return
 	
 	if state != "move":
 		return
@@ -76,6 +81,10 @@ func calculateAttackStrength() -> float:
 		attack = 50.0 * (differenceTime / 2000.0) * 0.5
 	lastAttackTime = Time.get_ticks_msec()
 	return attack
+	
+func die():
+	dead = true
+	animated_sprite.play("die")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	state = "move"

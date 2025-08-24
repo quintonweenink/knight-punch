@@ -1,18 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://fkcp3hwgank8"]
+[gd_scene load_steps=8 format=3 uid="uid://c01m4fsvftof"]
 
-[ext_resource type="Script" uid="uid://rn4qtsjlnefo" path="res://scripts/tombstone.gd" id="1_mweh2"]
-[ext_resource type="Texture2D" uid="uid://dggpu6durwtcb" path="res://assets/sprites/world_tileset.png" id="2_cghlf"]
-[ext_resource type="FontFile" uid="uid://m173tgas6hkj" path="res://assets/fonts/PixelOperator8.ttf" id="3_0gfhl"]
+[ext_resource type="Script" uid="uid://cccfovkv1waw6" path="res://scenes/switch.gd" id="1_nnoiq"]
+[ext_resource type="Texture2D" uid="uid://dggpu6durwtcb" path="res://assets/sprites/world_tileset.png" id="2_nnoiq"]
+[ext_resource type="FontFile" uid="uid://m173tgas6hkj" path="res://assets/fonts/PixelOperator8.ttf" id="3_4m6b1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mweh2"]
-atlas = ExtResource("2_cghlf")
-region = Rect2(128, 48, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnoiq"]
+atlas = ExtResource("2_nnoiq")
+region = Rect2(128, 32, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ls27i"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mweh2")
+"texture": SubResource("AtlasTexture_nnoiq")
 }],
 "loop": true,
 "name": &"default",
@@ -23,15 +23,13 @@ animations = [{
 radius = 5.09902
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mweh2"]
-cull_mode = 1
-polygon = PackedVector2Array(-6, -4, -3, -7, 4, -7, 7, -4, 7, 7, -6, 7)
+polygon = PackedVector2Array(-7, -7, 7, -7, 7, 7, -7, 7)
 
-[node name="Tombstone" type="Area2D"]
+[node name="Switch" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_mweh2")
+script = ExtResource("1_nnoiq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-light_mask = 3
 sprite_frames = SubResource("SpriteFrames_ls27i")
 autoplay = "default"
 
@@ -44,13 +42,12 @@ offset_left = -22.0
 offset_top = -35.0
 offset_right = 80.0
 offset_bottom = -12.0
-theme_override_fonts/font = ExtResource("3_0gfhl")
+theme_override_fonts/font = ExtResource("3_4m6b1")
 theme_override_font_sizes/font_size = 8
-text = "RIP Lourence"
+text = "Switch"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_mweh2")
-occluder_light_mask = 0
 
 [node name="Area2D" type="Area2D" parent="."]
 

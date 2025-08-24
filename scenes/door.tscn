@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cblebb7uh3wnj"]
+
+[ext_resource type="Script" uid="uid://bk6djp4jvg2pd" path="res://scripts/door.gd" id="1_uvdjg"]
+[ext_resource type="Texture2D" uid="uid://dggpu6durwtcb" path="res://assets/sprites/world_tileset.png" id="2_83dcw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la1wf"]
+atlas = ExtResource("2_83dcw")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ls27i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la1wf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83dcw"]
+size = Vector2(14, 14)
+
+[node name="Door" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_uvdjg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ls27i")
+autoplay = "default"
+frame_progress = 0.224102
+
+[node name="Blocker" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_83dcw")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(-31, 0)
+collision_mask = 3

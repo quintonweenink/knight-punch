@@ -1,6 +1,7 @@
 extends Node
 
 var score = 0
+@export var platforms_disabled = false
 
 @onready var score_label: Label = $"../CanvasLayer/MarginContainer/ScoreLabel"
 @onready var coin_sound: AudioStreamPlayer2D = $CoinSound
@@ -10,3 +11,7 @@ func add_point():
 	coin_sound.play()
 	print("Score: " + str(score))
 	score_label.text = "Score: " + str(score)
+	
+func switch():
+	platforms_disabled = true
+	print("platforms disabled")
