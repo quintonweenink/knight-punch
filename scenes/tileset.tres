@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=45 format=3 uid="uid://bglv4did0wn12"]
+[gd_resource type="TileSet" load_steps=43 format=3 uid="uid://bglv4did0wn12"]
 
 [ext_resource type="Texture2D" uid="uid://dggpu6durwtcb" path="res://assets/sprites/world_tileset.png" id="1_g3vke"]
 
@@ -78,12 +78,6 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8ool0"]
-polygon = PackedVector2Array(-8, -8, 7.63482, -8, 8, 8, -8, 8)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5newe"]
-polygon = PackedVector2Array(-8, -8, 7.63482, -8, 8, 8, -8, 8)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_37s47"]
 polygon = PackedVector2Array(-8, -8, 7.63482, -8, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pr1ej"]
@@ -242,7 +236,6 @@ texture = ExtResource("1_g3vke")
 2:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wljb1")
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:3/0 = 0
-5:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_5newe")
 6:3/0 = 0
 7:3/0 = 0
 7:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_fedci")
@@ -253,7 +246,6 @@ texture = ExtResource("1_g3vke")
 0:4/0 = 0
 1:4/0 = 0
 5:4/0 = 0
-5:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_37s47")
 6:4/0 = 0
 7:4/0 = 0
 7:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_8qswn")

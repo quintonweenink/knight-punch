@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dls2sapes5ene"]
+[gd_scene load_steps=4 format=3 uid="uid://dls2sapes5ene"]
 
 [ext_resource type="Texture2D" uid="uid://mm1fdkeyw00t" path="res://assets/images/arrow.png" id="1_qaoo7"]
 [ext_resource type="Texture2D" uid="uid://dju3qod2jc15r" path="res://assets/images/attack.png" id="2_ep0mg"]
+[ext_resource type="Script" uid="uid://37og5orvkvlu" path="res://scripts/touch_controls.gd" id="3_6e4pk"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
@@ -34,3 +35,22 @@ scale = Vector2(6.287, 6)
 texture_normal = ExtResource("2_ep0mg")
 action = "attack"
 visibility_mode = 1
+
+[node name="Back" type="TouchScreenButton" parent="."]
+position = Vector2(21, 20)
+scale = Vector2(2, 1.909)
+texture_normal = ExtResource("1_qaoo7")
+action = "attack"
+visibility_mode = 1
+script = ExtResource("3_6e4pk")
+
+[node name="Back2" type="TouchScreenButton" parent="."]
+position = Vector2(21, 20)
+scale = Vector2(2, 1.909)
+texture_normal = ExtResource("1_qaoo7")
+action = "attack"
+visibility_mode = 1
+script = ExtResource("3_6e4pk")
+
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="pressed" from="Back2" to="Back2" method="_on_pressed"]
