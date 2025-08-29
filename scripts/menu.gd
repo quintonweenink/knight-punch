@@ -11,3 +11,6 @@ func _on_boksen_level_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+
+func _on_bonus_level_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/game_nationality.tscn")
